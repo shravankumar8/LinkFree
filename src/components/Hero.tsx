@@ -5,6 +5,13 @@ import { FadeIn, FloatingElement } from "./Animations";
 import { ArrowRight } from "lucide-react";
 
 const Hero: React.FC = () => {
+  const scrollToWaitlist = () => {
+    const waitlistSection = document.getElementById("waitlist");
+    if (waitlistSection) {
+      waitlistSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
       <div className="absolute inset-0 overflow-hidden -z-10">
@@ -28,6 +35,7 @@ const Hero: React.FC = () => {
             <Button 
               size="lg" 
               className="bg-gradient-primary hover:opacity-90 transition-all text-white button-shine"
+              onClick={scrollToWaitlist}
             >
               Get Started for Free
               <ArrowRight className="ml-2 h-4 w-4" />
