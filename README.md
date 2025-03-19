@@ -28,48 +28,51 @@
 
 ### **1️⃣ Clone the Repo**  
 ```sh
-git clone https://github.com/YOUR-USERNAME/LinkFree.git
-cd LinkFree
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
+
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
+
+# Step 3: Install the necessary dependencies.
+npm i
+
+# Step 4: Start the development server with auto-reloading and an instant preview.
+npm run dev
 ```
 
-### **2️⃣ Install Dependencies**  
-```sh
-npm install  # or bun install / pnpm install
-```
+**Edit a file directly in GitHub**
 
-### **3️⃣ Run the Dev Server**  
-```sh
-npm run dev  # or bun dev / pnpm dev
-```
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
-Now open `http://localhost:3000` in your browser! 🎉  
+**Use GitHub Codespaces**
 
----
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-## **📤 Deployment**  
-**Deploy on Vercel, Netlify, or self-host with Docker**  
+## What technologies are used for this project?
 
-- **Vercel:** One-click deploy  
-- **Netlify:** `netlify deploy`  
-- **Docker:**  
-  ```sh
-  docker build -t linkfree .
-  docker run -p 3000:3000 linkfree
-  ```
+This project is built with .
 
----
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
 
-## **🤝 Contributing**  
-We ❤️ contributions! Want to help improve **LinkFree**? Check out our [CONTRIBUTING.md](./CONTRIBUTING.md) to get started.  
+## How can I deploy this project?
 
----
+Simply open [Lovable](https://lovable.dev/projects/073b12aa-e955-4695-a003-fa946398053f) and click on Share -> Publish.
 
-## **📜 License**  
-**MIT License** – Free to use and modify.  
+## I want to use a custom domain - is that possible?
 
----
-
-## **🌟 Show Some Love**  
-If you like this project, **star this repo** ⭐ and share it! 🚀  
-
----
+We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+# LinkFree
+# LinkFree
+# LinkFree
+# LinkFree
