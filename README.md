@@ -3,7 +3,7 @@
 
 # **🌐 LinkFree** – Open-Source Alternative to Linktree  
 
-![LinkFree Banner](https://your-banner-url.com) _(Optional: Add a cool banner here)_  
+![LinkFree Banner](/assets//Linkfree.png) _(Optional: Add a cool banner here)_  
 
 🔗 **LinkFree** is an open-source, modern, and highly customizable alternative to Linktree. Build and share your own beautiful bio link page with amazing **templates, animations, and a modern stack.** 🚀  
 
@@ -72,4 +72,7 @@ Simply open [Lovable](https://lovable.dev/projects/073b12aa-e955-4695-a003-fa946
 ## I want to use a custom domain - is that possible?
 
 We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
-
+# LinkFree
+# LinkFree
+# LinkFree
+# LinkFree
