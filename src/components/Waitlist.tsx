@@ -3,44 +3,24 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { FadeIn } from "./Animations";
 import { supabase } from "../supabaseClient";
-import { useWindowSize } from "react-use"; 
+
 import { Bounce, ToastContainer, toast } from "react-toastify";
-import ReactDesignRain from "../components/ui/Reactconfeti"
+import ReactDesignRain from "../components/ui/Reactconfeti";
 const Waitlist: React.FC = () => {
   const [showRain, setShowRain] = useState(false);
-
   const [email, setEmail] = useState("");
-  const [isWaitListSuccess, SetisWaitListSuccess] = useState(Boolean);
-  useEffect(() => {
-    if (isWaitListSuccess) {
-      // Show the rain when isWaitListSuccess becomes true
-      setShowRain(true);
 
-      // Set a timer to hide it after 5 seconds (5000 milliseconds)
+  useEffect(() => {
+    if (showRain) {
       const timer = setTimeout(() => {
         setShowRain(false);
       }, 5000);
-
-      // Cleanup function to clear the timer if isWaitListSuccess changes or component unmounts
       return () => clearTimeout(timer);
     }
-  }, [isWaitListSuccess]);
+  }, [showRain]);
+
   const JoinedWaitlist = () => {
-    SetisWaitListSuccess(true);
     return toast.success("You have been successfully added to the waitlist!", {
-      position: "bottom-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-      transition: Bounce,
-    });
-  };
-  const waitListError = () => {
-    return toast.error("🦄 some internal error please try later ", {
       position: "bottom-right",
       autoClose: 3000,
       hideProgressBar: false,
@@ -58,9 +38,9 @@ const Waitlist: React.FC = () => {
 
     if (error) {
       console.error("Error inserting data:", error.message);
-      waitListError();
+
+      throw error;
     } else {
-      
       JoinedWaitlist();
       console.log("Data inserted successfully:", data);
     }
@@ -68,14 +48,26 @@ const Waitlist: React.FC = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await addToWaitlist(email);
+
+    try {
+      await addToWaitlist(email);
+      setShowRain(true);
+
+      setEmail("");
+    } catch (error) {
+      if (error.code === "23505") {
+        toast.info("You're already on the waitlist!");
+      } else {
+        toast.error("An error occurred, please try again later.");
+      }
+    }
+
     setEmail("");
   };
 
   return (
     <section id="waitlist" className="py-20 bg-primary/5">
       <div className="container-tight">
-      
         <FadeIn>
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -88,11 +80,7 @@ const Waitlist: React.FC = () => {
 
             <form
               id="waitlist-form"
-              onSubmit={(e) => {
-                e.preventDefault(); // Prevent the default form submission behavior
-                JoinedWaitlist();
-
-              }}
+              onSubmit={handleSubmit}
               className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
             >
               <Input
@@ -130,7 +118,7 @@ const Waitlist: React.FC = () => {
         transition={Bounce}
       />
 
-      {isWaitListSuccess ?   <ReactDesignRain /> :<></>}
+      {showRain && <ReactDesignRain />}
     </section>
   );
 };
