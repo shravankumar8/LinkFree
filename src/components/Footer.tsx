@@ -105,8 +105,8 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-200 mt-16 pt-8 flex flex-col md:flex-row items-center justify-between">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} ProvenLabs. Built with{" "}
-            <Heart className="inline h-3 w-3 text-red-500" /> by the community.
+            © {new Date().getFullYear()} ProvenLabs.
+        
           </p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <a
