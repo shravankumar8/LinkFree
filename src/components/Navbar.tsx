@@ -2,8 +2,10 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Github } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar: React.FC = () => {
+  const navigate= useNavigate();
   const [scrolled, setScrolled] = useState(false);
 
   const scrollToWaitlist = () => {
@@ -74,15 +76,20 @@ const Navbar: React.FC = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          {/* <Button
-            variant="ghost"
-            size="sm"
-            className="hidden md:inline-flex transition-all"
-          >
-            Log in
-          </Button> */}
+          <Link to="/login">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="hidden md:inline-flex transition-all"
+            >
+              Log in
+            </Button>
+          </Link>
+
           <Button
-            onClick={scrollToWaitlist}
+            onClick={() => {
+              navigate("/signup");
+            }}
             className="bg-gradient-primary hover:opacity-90 transition-all text-white button-shine"
           >
             Get Started
