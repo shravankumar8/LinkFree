@@ -3,7 +3,7 @@
 
 # **🌐 LinkFree** – Open-Source Alternative to Linktree  
 
-![LinkFree Banner](/assets//Linkfree.png) _(Optional: Add a cool banner here)_  
+![LinkFree Banner](/assets//Linkfreecopy.png) _(Optional: Add a cool banner here)_  
 
 🔗 **LinkFree** is an open-source, modern, and highly customizable alternative to Linktree. Build and share your own beautiful bio link page with amazing **templates, animations, and a modern stack.** 🚀  
 
